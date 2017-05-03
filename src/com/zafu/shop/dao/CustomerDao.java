@@ -44,8 +44,11 @@ public class CustomerDao {
 		 */
 	public static int UpdateCustomer(Customer customer)
 	{
-		int result=DBHelper.executeNonQuery("update customer set cphoto=?,cname=?,cbirth=?,cadd=?,cphone=?,cpass=? where cid =?", 
-				customer.getCphoto(),customer.getCname(),customer.getCbirth(),customer.getCaddress(),customer.getCphone(),customer.getCpassword(),customer.getCid());
+		int result=DBHelper.executeNonQuery("update customer set cphoto=?,cname=?,cbirth=?"
+				+ ",cadd=?,cphone=?,cpass=? where cid =?", 
+				customer.getCphoto(),customer.getCname(),customer.getCbirth(),
+				customer.getCaddress(),customer.getCphone(),customer.getCpassword(),
+				customer.getCid());
 		return result;
 	}
 		
@@ -65,6 +68,7 @@ public class CustomerDao {
 		if(rs.next())
 		{
 			Customer result=new Customer();
+			result.setCid(cid);
 			result.setCname(rs.getString("cname"));
 			result.setCaddress(rs.getString("cadd"));
 			result.setCpassword(rs.getString("cpass"));

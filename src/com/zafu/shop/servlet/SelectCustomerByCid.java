@@ -77,6 +77,7 @@ public class SelectCustomerByCid extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		utf8(request,response);
 		int cid=Integer.parseInt(request.getParameter("cid"));
 		Customer rs=new Customer();
