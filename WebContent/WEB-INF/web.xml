@@ -72,4 +72,20 @@
     <servlet-name>InsertCustomer</servlet-name>
     <url-pattern>/insertcustomer</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <servlet-name>SelectCustomerByCid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectCustomerByCid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectCustomerByCid</servlet-name>
+    <url-pattern>/selectcustomerbycid</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UpdateCustomer</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.UpdateCustomer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateCustomer</servlet-name>
+    <url-pattern>/updatecustomer</url-pattern>
+  </servlet-mapping>
 </web-app>

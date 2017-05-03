@@ -12,8 +12,7 @@ public class CustomerDao {
 	 */
 	public static int InsertCustomer(Customer customer)
 	{
-		int result =DBHelper.executeNonQuery("insert into customer(cid,cphoto,cname,cbirth,"
-				+ "cadd,cphone,cpass) values(?,?,?,?,?,?,?)", customer.getCid(),
+		int result =DBHelper.executeNonQuery("insert into customer(cid,cphoto,cname,cbirth,cadd,cphone,cpass) values(?,?,?,?,?,?,?)", customer.getCid(),
 				customer.getCphoto(),customer.getCname(),customer.getCbirth(),
 				customer.getCaddress(),customer.getCphone(),customer.getCpassword());
 		return result;
@@ -43,8 +42,12 @@ public class CustomerDao {
 		/*
 		 * 用户信息修改
 		 */
-	
-		
+	public static int UpdateCustomer(Customer customer)
+	{
+		int result=DBHelper.executeNonQuery("update customer set cphoto=?,cname=?,cbirth=?,cadd=?,cphone=?,cpass=? where cid =?", 
+				customer.getCphoto(),customer.getCname(),customer.getCbirth(),customer.getCaddress(),customer.getCphone(),customer.getCpassword(),customer.getCid());
+		return result;
+	}
 		
 		/*
 		 * 用户登录
@@ -54,5 +57,28 @@ public class CustomerDao {
 		/*
 		 * 通过id查询用户
 		 */
+	public static Customer SelectCustomerByCid(int cid)
+	{	
+		try{
+		String sql="select cphoto,cname,cbirth,cadd,cphone,cpass from customer where cid="+cid;
+		ResultSet rs=DBHelper.executeQuery(sql);
+		if(rs.next())
+		{
+			Customer result=new Customer();
+			result.setCname(rs.getString("cname"));
+			result.setCaddress(rs.getString("cadd"));
+			result.setCpassword(rs.getString("cpass"));
+			result.setCphone(rs.getString("cphone"));
+			result.setCphoto(rs.getString("cphoto"));		
+			result.setCbirth(rs.getDate("cbirth"));
+			return result;
+		}
+			
+		}catch (SQLException e) {
+		// TODO: handle exception
+		e.printStackTrace();
+		}
+		return null;
+	}
 		
 }

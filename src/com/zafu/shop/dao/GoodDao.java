@@ -112,7 +112,7 @@ public class GoodDao {
 	public static Good SelectGoodById(int Id)
 	{
 		try{
-			ArrayList<Good> list=new ArrayList<Good>();
+			
 			String sql="select gid,gname,gtuan,gmen,gsold,gscore,gcombo,"
 					+ "gnotice,gphoto,sid from good where gid="+Id;
 			ResultSet rs=DBHelper.executeQuery(sql);

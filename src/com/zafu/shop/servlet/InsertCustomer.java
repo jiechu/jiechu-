@@ -105,10 +105,10 @@ public class InsertCustomer extends HttpServlet {
 		PrintWriter writer=response.getWriter();
 		if(rs==0)
 		 {
-			 writer.println("修改失败");
+			 writer.println("插入失败");
 		 }
 		 else {
-			 writer.println("修改成功");
+			 writer.println("插入成功");
 		 }
 	}
 
