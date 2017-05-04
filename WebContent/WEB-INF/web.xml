@@ -96,4 +96,12 @@
     <servlet-name>CustomerLogin</servlet-name>
     <url-pattern>/customerlogin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>InsertSeller</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.InsertSeller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertSeller</servlet-name>
+    <url-pattern>/insertseller</url-pattern>
+  </servlet-mapping>
 </web-app>

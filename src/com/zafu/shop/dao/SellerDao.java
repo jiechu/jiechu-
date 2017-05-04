@@ -2,6 +2,7 @@ package com.zafu.shop.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.zafu.shop.bean.Seller;
 import com.zafu.shop.db.DBHelper;
@@ -40,4 +41,54 @@ public class SellerDao {
 		
 		return null;
 	}
+	/*
+	 * 增加商家
+	 */
+	public static int InsertSeller(Seller seller)
+	{		
+		 int result=DBHelper.executeNonQuery("insert into seller(sid,sphone,spass,sname,sadd,sscore,sphoto,sdesc) values(?,?,?,?,?,?,?,?)",
+		seller.getSid(),seller.getSphone(),seller.getSpassword(),seller.getSname(),
+		seller.getSaddress(),seller.getSscore(),seller.getSphoto(),seller.getSdesc());	
+		return result;
+	}
+	/*
+	 * 查询最新的一条用户记录
+	 */
+	public static int SelectLastSeller()
+	{	
+		try
+		{
+		String sql="select sid from seller order by sid desc ";
+		ResultSet rs=DBHelper.executeQuery(sql);
+		rs.next();
+		int sid=rs.getInt(1);
+		return sid;
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	
+	/*
+	 * 商家登陆
+	 */
+	
+	
+	
+	/*
+	 * 判断是否已经输入地址
+	 */
+	
+	
+	
+	/*
+	 * 商家展示
+	 */
+	
+	
+	/*
+	 * 修改商家评分
+	 */
 }
