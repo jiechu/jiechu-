@@ -54,8 +54,24 @@ public class CustomerDao {
 		
 		/*
 		 * 用户登录
+		 * 
 		 */
-	
+	public static Boolean CustomerLogin(String name,String password)
+	{	
+		try{
+		String sql="select cname,cpass from customer where cname='"+name+"' and cpass='"+password+"'";
+		//字符串类型必须加""
+		ResultSet rs=DBHelper.executeQuery(sql);
+		if(rs.next())
+		{
+				return true;
+		}
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return false;
+	}
 		
 		/*
 		 * 通过id查询用户
