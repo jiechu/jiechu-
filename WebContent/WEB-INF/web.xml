@@ -144,12 +144,28 @@
     <servlet-name>ModifyOrder</servlet-name>
     <url-pattern>/modifyorder</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>DeleteOrder</servlet-name>
     <servlet-class>com.zafu.shop.servlet.DeleteOrder</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteOrder</servlet-name>
     <url-pattern>/deleteorder</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModifyOrderscore</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.ModifyOrderscore</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyOrderscore</servlet-name>
+    <url-pattern>/modifyorderscore</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectOrdersByOid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectOrdersByOid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectOrdersByOid</servlet-name>
+    <url-pattern>/selectordersbyoid</url-pattern>
   </servlet-mapping>
 </web-app>
