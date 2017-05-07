@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.alibaba.fastjson.parser.deserializer.SqlDateDeserializer;
 import com.zafu.shop.bean.Seller;
 import com.zafu.shop.db.DBHelper;
 
@@ -97,6 +98,25 @@ public class SellerDao {
 	/*
 	 * 判断是否已经输入地址
 	 */
+	public static Boolean IsExistAddress(int sid)
+	{
+		try{
+			String sql="select sadd from seller where sid="+sid;
+			ResultSet rs=DBHelper.executeQuery(sql);
+			if(rs.next())
+			{
+				String sadd=rs.getString("sadd");
+				if(sadd!=""&&sadd!=null)
+				{
+					return true;
+				}
+			}
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	
 	
