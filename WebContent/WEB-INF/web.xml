@@ -128,12 +128,28 @@
     <servlet-name>IsExistAddress</servlet-name>
     <url-pattern>/isexistaddress</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>InsertOrder</servlet-name>
     <servlet-class>com.zafu.shop.servlet.InsertOrder</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>InsertOrder</servlet-name>
     <url-pattern>/insertorder</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModifyOrder</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.ModifyOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyOrder</servlet-name>
+    <url-pattern>/modifyorder</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>DeleteOrder</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.DeleteOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteOrder</servlet-name>
+    <url-pattern>/deleteorder</url-pattern>
   </servlet-mapping>
 </web-app>

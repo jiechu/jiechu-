@@ -42,14 +42,22 @@ public class OrdersDao {
 		/*
 		 * 删除订单
 		 */
-	
+	public static int DeleteOrder(int oid)
+	{
+		String sql="delete from orders where oid="+oid;
+		int result=DBHelper.executeNonQuery(sql);
+		return result;
+	}
 		
 		
 		/*
 		 * 更改订单状态
 		 */
-	
-		
+	public static int ModifyOrder(int oid,int ostate)
+	{
+		int result=DBHelper.executeNonQuery("update orders set ostate=? where oid=?",ostate,oid);
+		return result;
+	}
 		/*
 		 * 同时更改状态以及评分（待评价转为完成）
 		 */
