@@ -74,6 +74,23 @@ public class SellerDao {
 	/*
 	 * 商家登陆
 	 */
+	public static Boolean SellerLogin(String sphone,String spass)
+	{
+		int result;
+		try{
+			String sql="select sphone,spass from seller where sphone='"+sphone+"' and spass='"+spass+"'";
+			//字符串类型必须加""
+			ResultSet rs=DBHelper.executeQuery(sql);
+			if(rs.next())
+			{
+					return true;
+			}
+			}catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+		return false;
+	}
 	
 	
 	
@@ -86,6 +103,32 @@ public class SellerDao {
 	/*
 	 * 商家展示
 	 */
+	public static ArrayList<Seller> SelectSeller()
+	{
+		try{
+			ArrayList<Seller> list=new ArrayList<Seller>();
+			String sql="select sid,sphone,spass,sname,sadd,sscore,sphoto,sdesc from seller";
+			ResultSet rs=DBHelper.executeQuery(sql);
+			
+			while(rs.next()){
+				Seller result=new Seller();
+				result.setSaddress(rs.getString("sadd"));
+				result.setSdesc(rs.getString("sdesc"));
+				result.setSid(rs.getInt("sid"));
+				result.setSname(rs.getString("sname"));
+				result.setSpassword(rs.getString("spass"));
+				result.setSphone(rs.getString("sphone"));
+				result.setSphoto(rs.getString("sphoto"));
+				result.setSscore(rs.getFloat("sscore"));
+				list.add(result);
+			}
+			return list;
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	
 	/*

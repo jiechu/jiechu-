@@ -104,4 +104,20 @@
     <servlet-name>InsertSeller</servlet-name>
     <url-pattern>/insertseller</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>SellerLogin</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SellerLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SellerLogin</servlet-name>
+    <url-pattern>/sellerlogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectSeller</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectSeller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectSeller</servlet-name>
+    <url-pattern>/selectseller</url-pattern>
+  </servlet-mapping>
 </web-app>
