@@ -168,4 +168,12 @@
     <servlet-name>SelectOrdersByOid</servlet-name>
     <url-pattern>/selectordersbyoid</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>SelectOrdersBySid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectOrdersBySid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectOrdersBySid</servlet-name>
+    <url-pattern>/selectordersbysid</url-pattern>
+  </servlet-mapping>
 </web-app>

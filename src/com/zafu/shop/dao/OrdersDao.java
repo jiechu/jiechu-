@@ -107,7 +107,45 @@ public class OrdersDao {
 		
 		//根据商家sid查询订单
 		
+	public static ArrayList<Orders> SelectOrdersBySid(int sid)
+	{	
+		try{
+			ArrayList<Good> g=new ArrayList<Good>();
+			ArrayList<Orders> o=new ArrayList<Orders>();
+			g=GoodDao.GetGoodBySid(sid);
+			int gid;
+			for(int i=0;i<g.size();i++)
+			{
+				 gid=g.get(i).getGid();
+			
+			String sql=" select oid,ophone,otime,oamount,oprice,ostate,oscore,cid  from orders where gid="+gid;
+			ResultSet rs=DBHelper.executeQuery(sql);
+			while(rs.next())
+			{
+				Orders os=new Orders();
+				os.setGid(g.get(i));
+				os.setOamount(rs.getInt("oamount"));
+				os.setOid(rs.getInt("oid"));
+				os.setOphone(rs.getString("ophone"));
+				os.setOprice(rs.getFloat("oprice"));
+				os.setOscore(rs.getInt("oscore"));
+				os.setOstate(rs.getInt("ostate"));
+				os.setOtime(rs.getDate("otime"));
+				Customer c=new Customer();
+				c=CustomerDao.SelectCustomerByCid(rs.getInt("cid"));
+				os.setCid(c);
+				o.add(os);
+			}
+			}
+			return o;
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
 		/*
+		 * 
 		 * 通过商家sid和订单状态
 		 */
 		

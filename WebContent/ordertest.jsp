@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <body>  
-        <form action="selectordersbyoid" method="post">  
+        <form action="selectordersbysid" method="post">  
                 <tr>  
                     <td>oid：</td>  
                     <td>  
@@ -59,6 +59,12 @@
                     <td>cid：</td>  
                     <td>  
                         <input type="text" name="cid"/>  
+                    </td>  
+                </td>
+                                  <td>                    
+                    <td>sid：</td>  
+                    <td>  
+                        <input type="text" name="sid"/>  
                     </td>  
                 </td>
                 
