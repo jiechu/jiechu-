@@ -120,12 +120,20 @@
     <servlet-name>SelectSeller</servlet-name>
     <url-pattern>/selectseller</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>IsExistAddress</servlet-name>
     <servlet-class>com.zafu.shop.servlet.IsExistAddress</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>IsExistAddress</servlet-name>
     <url-pattern>/isexistaddress</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>InsertOrder</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.InsertOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertOrder</servlet-name>
+    <url-pattern>/insertorder</url-pattern>
   </servlet-mapping>
 </web-app>
