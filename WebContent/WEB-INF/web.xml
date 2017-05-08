@@ -168,12 +168,28 @@
     <servlet-name>SelectOrdersByOid</servlet-name>
     <url-pattern>/selectordersbyoid</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>SelectOrdersBySid</servlet-name>
     <servlet-class>com.zafu.shop.servlet.SelectOrdersBySid</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SelectOrdersBySid</servlet-name>
     <url-pattern>/selectordersbysid</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectOrdersBySidAndOstate</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectOrdersBySidAndOstate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectOrdersBySidAndOstate</servlet-name>
+    <url-pattern>/selectordersbysidandostate</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>SelectOrdersByCid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectOrdersByCid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectOrdersByCid</servlet-name>
+    <url-pattern>/selectordersbycid</url-pattern>
   </servlet-mapping>
 </web-app>
