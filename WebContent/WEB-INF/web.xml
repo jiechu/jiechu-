@@ -208,7 +208,7 @@
     <servlet-name>SetGoodScore</servlet-name>
     <url-pattern>/setgoodscore</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>SetSellerScore</servlet-name>
     <servlet-class>com.zafu.shop.servlet.SetSellerScore</servlet-class>
   </servlet>
@@ -216,4 +216,85 @@
     <servlet-name>SetSellerScore</servlet-name>
     <url-pattern>/setsellerscore</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>InsertShoucang</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.InsertShoucang</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertShoucang</servlet-name>
+    <url-pattern>/insertshoucang</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InsertTie</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.InsertTie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertTie</servlet-name>
+    <url-pattern>/inserttie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GetAllTie</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.GetAllTie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllTie</servlet-name>
+    <url-pattern>/getalltie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectTieBytid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectTieBytid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectTieBytid</servlet-name>
+    <url-pattern>/selecttiebytid</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectTieByType</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectTieByType</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectTieByType</servlet-name>
+    <url-pattern>/selecttiebytype</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectTieBycid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectTieBycid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectTieBycid</servlet-name>
+    <url-pattern>/selecttiebycid</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectShoucangBycid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectShoucangBycid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectShoucangBycid</servlet-name>
+    <url-pattern>/selectshoucangbycid</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InsertPinglun</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.InsertPinglun</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertPinglun</servlet-name>
+    <url-pattern>/insertpinglun</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectPinglunBycid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectPinglunBycid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectPinglunBycid</servlet-name>
+    <url-pattern>/selectpinglunbycid</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectPinglunBytid</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectPinglunBytid</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectPinglunBytid</servlet-name>
+    <url-pattern>/selectpinglunbytid</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
