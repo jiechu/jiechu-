@@ -223,6 +223,38 @@ public class OrdersDao {
 		/*
 		 * 用户id以及状态
 		 */
+		public static ArrayList<Orders> SelectOrdersByCidAndOstate(int cid,int ostate)
+		{
+			try{
+				ArrayList<Orders> o=new ArrayList<Orders>();
+				String sql="select oid,ophone,otime,oamount,oprice,ostate,oscore,cid,gid  from orders where cid='"+cid+"' and ostate='"+ostate+"'";
+				ResultSet rs=DBHelper.executeQuery(sql);
+				while(rs.next())
+				{
+					Orders os=new Orders();
+					Good g=new Good();
+					g=GoodDao.SelectGoodById(rs.getInt("gid"));
+					os.setGid(g);
+					os.setOamount(rs.getInt("oamount"));
+					os.setOid(rs.getInt("oid"));
+					os.setOphone(rs.getString("ophone"));
+					os.setOprice(rs.getFloat("oprice"));
+					os.setOscore(rs.getInt("oscore"));
+					os.setOstate(ostate);
+					os.setOtime(rs.getDate("otime"));
+					Customer c=new Customer();
+					c=CustomerDao.SelectCustomerByCid(rs.getInt("cid"));
+					os.setCid(c);
+					o.add(os);
+				}
+				return o;
+			}catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			return null;
+		}
 		
+
 		
 }

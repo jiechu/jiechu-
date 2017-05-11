@@ -184,12 +184,36 @@
     <servlet-name>SelectOrdersBySidAndOstate</servlet-name>
     <url-pattern>/selectordersbysidandostate</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>SelectOrdersByCid</servlet-name>
     <servlet-class>com.zafu.shop.servlet.SelectOrdersByCid</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SelectOrdersByCid</servlet-name>
     <url-pattern>/selectordersbycid</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectOrdersByCidAndOstate</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SelectOrdersByCidAndOstate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectOrdersByCidAndOstate</servlet-name>
+    <url-pattern>/selectordersbycidandostate</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SetGoodScore</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SetGoodScore</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetGoodScore</servlet-name>
+    <url-pattern>/setgoodscore</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>SetSellerScore</servlet-name>
+    <servlet-class>com.zafu.shop.servlet.SetSellerScore</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetSellerScore</servlet-name>
+    <url-pattern>/setsellerscore</url-pattern>
   </servlet-mapping>
 </web-app>

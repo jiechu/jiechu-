@@ -154,4 +154,26 @@ public class SellerDao {
 	/*
 	 * 修改商家评分
 	 */
+	public static void SetSellerScore(int sid)
+	{
+		try{
+			String sql="select gscore from good where sid="+sid;
+			ResultSet rs=DBHelper.executeQuery(sql);
+			float sum=0;
+			while(rs.next())
+			{
+				float gscore=rs.getFloat("gscore");
+				sum+=gscore;
+			}
+			rs.last();
+			int count=rs.getRow();
+			sum/=count;
+			//"update good set gscore='"+sum+"'where gid='"+gid+"'"
+			String sql1="update seller set sscore='"+sum+"'where sid='"+sid+"'";
+			int result=DBHelper.executeNonQuery(sql1);
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
 }

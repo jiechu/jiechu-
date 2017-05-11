@@ -5,7 +5,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.alibaba.fastjson.parser.deserializer.SqlDateDeserializer;
 import com.zafu.shop.bean.Good;
+import com.zafu.shop.bean.Orders;
 import com.zafu.shop.bean.Seller;
 import com.zafu.shop.db.DBHelper;
 import com.zafu.shop.dao.SellerDao;
@@ -187,6 +189,31 @@ public class GoodDao {
 				good.getGid(),good.getGname(),good.getGtuan(),good.getGmen(),
 				good.getGsold(),good.getGscore(),good.getGcombo(),good.getGnotice(),
 				good.getGphoto(),good.getSeller().getSid());
+		return result;
+	}
+	//获取所有的相应订单，然后求平均 
+	public static int SetGoodScore(int gid)
+	{
+		int result=0;
+		try{
+			String sql="select gid,oscore from orders where gid="+gid;
+			ResultSet rs=DBHelper.executeQuery(sql);
+			float sum=0;
+			while(rs.next())
+			{
+				int oscore=rs.getInt("oscore");
+				sum+=oscore;
+			}
+			rs.last();
+			int count=rs.getRow();
+			sum=sum/count;
+			String sql1="update good set gscore='"+sum+"'where gid='"+gid+"'";
+			result=DBHelper.executeNonQuery(sql1);
+			return result;
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
 		return result;
 	}
 }
